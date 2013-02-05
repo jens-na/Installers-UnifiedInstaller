@@ -1,0 +1,12 @@
+[Unit]
+Description=Plone
+After=network.target
+     
+[Service]
+Type=forking
+ExecStart=/usr/local/plone/zeocluster/bin/plonectl start
+ExecStop=/usr/local/plone/zeocluster/bin/plonectl stop
+ExecReload=/usr/local/plone/zeocluster/bin/plonectl restart
+   
+[Install]
+WantedBy=multi-user.target
